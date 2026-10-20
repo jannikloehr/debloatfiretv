@@ -1,0 +1,8 @@
+# Local tool state
+.remember/
+.DS_Store
+
+# Large / device-specific artifacts — keep out of git
+*.apk
+*.img
+dumps/

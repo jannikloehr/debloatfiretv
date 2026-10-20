@@ -1,0 +1,2 @@
+# Packages to disable, one per line. Lines starting with # are ignored.
+# Only add a package after documenting it in research/packages.md.
