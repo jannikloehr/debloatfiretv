@@ -117,3 +117,4 @@ Third-party apps (Netflix, YouTube, TiviMate, …) are never touched.
 ## Notes
 
 - `adb exec-out screencap -p` on T1 prepends a log line ("Init wrapper sys mutex…"); strip everything before the PNG header to get a valid image.
+- Mixed English/German Settings on T1 is not caused by debloating: Fire OS renamed the top-level Settings tiles ("My Fire TV" → "Device & Software"), and those new strings exist only in English in `com.amazon.tv.settings.v2`. The German overlay `com.amazon.tv.settings.v2.overlay.localisation.common` (updated 2026-10-20, before any debloating) only translates the old names, so Android falls back to English for the tiles while the unchanged submenus stay German.
