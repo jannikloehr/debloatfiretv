@@ -6,5 +6,5 @@ list=${1:?usage: restore.sh <list>}
 
 { grep -vE '^\s*(#|$)' "$list" || true; } | while read -r pkg; do
   printf '%s: ' "$pkg"
-  adb shell pm enable --user 0 "$pkg" </dev/null | tr -d '\r'
+  adb shell pm enable --user 0 "$pkg" </dev/null 2>&1 | tr -d '\r' | head -1 || true
 done

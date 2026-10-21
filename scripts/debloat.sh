@@ -8,7 +8,7 @@ apply=${2:-}
 { grep -vE '^\s*(#|$)' "$list" || true; } | while read -r pkg; do
   if [[ $apply == -y ]]; then
     printf '%s: ' "$pkg"
-    adb shell pm disable-user --user 0 "$pkg" </dev/null | tr -d '\r'
+    adb shell pm disable-user --user 0 "$pkg" </dev/null 2>&1 | tr -d '\r' | head -1 || true
   else
     echo "would disable: $pkg"
   fi

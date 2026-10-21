@@ -1,0 +1,10 @@
+ar.tvplayer.tv
+com.amazon.avod
+com.amazon.firetv.youtube
+com.amazon.tv.legal.notices.overlay.localisation.common
+com.amazon.tv.parentalcontrols.overlay.localisation.common
+com.amazon.tv.settings.v2.overlay.localisation.common
+com.netflix.ninja
+com.zdf.android.mediathek
+de.swr.ard.avp.mobile.android.amazon
+org.jellyfin.androidtv

@@ -7,8 +7,10 @@ adb get-state >/dev/null 2>&1 || { echo "no device connected (adb connect <ip>:5
 
 prop() { adb shell getprop "$1" | tr -d '\r'; }
 
-model=$(prop ro.product.model | tr ' ' '_')
-build=$(prop ro.build.version.name | tr ' ' '_')
+slug() { tr -c 'A-Za-z0-9.\n-' '_'; }
+
+model=$(prop ro.product.model | slug)
+build=$(prop ro.build.version.name | slug)
 out="$(dirname "$0")/../research/devices/${model:-unknown}-${build:-unknown}"
 mkdir -p "$out"
 
