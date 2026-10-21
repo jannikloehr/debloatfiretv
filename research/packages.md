@@ -76,3 +76,13 @@ Matter (`com.amazon.tv.matter*`) holds Alexa permissions (`SEND_DATA_TO_ALEXA`, 
 | com.apple.airplay.amazon.airplay, com.amazon.cast.sink | AirPlay / casting, if used |
 | com.amazon.alexadirectivebrokerservice, com.amazon.alexa.datastore.app, amazon.speech.davs.davcservice | Alexa backend, used by Matter |
 | ar.tvplayer.tv (TiviMate), com.netflix.ninja, com.amazon.firetv.youtube | User apps in daily use. Never touch |
+
+## Comparison with firestrip
+
+[WB2024/firestrip](https://github.com/WB2024/firestrip) (checked 2026-10-21, last push 2026-05-08) lists 158 packages in `common.toml`. Notes for this device:
+
+- Its `settings put` privacy keys (`amazon:device_metrics_opt_in`, `amazon:acr_enabled`, `amazon:sidewalk_enabled`, …) do not exist here (`settings get` → `null`), so writing them has no effect on Fire OS 7.7.1.7. The real keys are `amz_limit_ad_tracking=1`, `advertisingIdApp:interestBasedAds:value=0` and `USAGE_METRICS_UPLOAD_ENABLED=0`, already in the privacy-friendly state.
+- Its `telemetry` tier includes the protected `com.amazon.device.metrics` and `com.amazon.ftvads.deeplinking` (refused here without root).
+- Several of its descriptions look wrong for Fire TV: `com.amazon.whisperlink.*` / `whisperplay.*` is Amazon's device discovery (Fire TV phone remote, Fling), not Sidewalk; `com.amazon.dialservice` is DIAL casting (YouTube/Netflix "cast to TV").
+- Candidates it marks `safe`/`telemetry` that are not in our lists yet (untested here): `com.amazon.adep` (analytics pipeline), `com.amazon.tv.csapp`, `com.amazon.connectivitydiag`, `com.amazon.device.logmanager`, `com.amazon.hedwig` (News), `com.amazon.recess` (games), `com.amazon.cloud9` (Silk browser), `com.amazon.naatyam`.
+- Not taking from its `safe` list: `com.android.documentsui` (file picker, e.g. TiviMate backup restore), `com.amazon.tifobserver` / `com.amazon.franktvinput` (live TV channels), `com.amazon.dialservice`, `com.amazon.device.messaging` (push for Amazon apps), TTS engines (accessibility).

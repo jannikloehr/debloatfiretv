@@ -4,4 +4,4 @@ fire_os:      Fire OS 7.7.1.7 (PS7717/5741)
 android:      9
 sdk:          28
 build:        PS7717.5741N
-captured:     2026-10-21T06:05:59Z
+captured:     2026-10-21T06:23:37Z
