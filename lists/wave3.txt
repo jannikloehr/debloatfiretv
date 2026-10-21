@@ -1,0 +1,6 @@
+# Wave 3 — candidates from firestrip's safe/telemetry tiers. See research/packages.md.
+com.amazon.connectivitydiag
+com.amazon.hedwig
+com.amazon.recess
+com.amazon.cloud9
+com.amazon.naatyam

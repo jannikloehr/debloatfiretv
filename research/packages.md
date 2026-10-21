@@ -86,3 +86,18 @@ Matter (`com.amazon.tv.matter*`) holds Alexa permissions (`SEND_DATA_TO_ALEXA`, 
 - Several of its descriptions look wrong for Fire TV: `com.amazon.whisperlink.*` / `whisperplay.*` is Amazon's device discovery (Fire TV phone remote, Fling), not Sidewalk; `com.amazon.dialservice` is DIAL casting (YouTube/Netflix "cast to TV").
 - Candidates it marks `safe`/`telemetry` that are not in our lists yet (untested here): `com.amazon.adep` (analytics pipeline), `com.amazon.tv.csapp`, `com.amazon.connectivitydiag`, `com.amazon.device.logmanager`, `com.amazon.hedwig` (News), `com.amazon.recess` (games), `com.amazon.cloud9` (Silk browser), `com.amazon.naatyam`.
 - Not taking from its `safe` list: `com.android.documentsui` (file picker, e.g. TiviMate backup restore), `com.amazon.tifobserver` / `com.amazon.franktvinput` (live TV channels), `com.amazon.dialservice`, `com.amazon.device.messaging` (push for Amazon apps), TTS engines (accessibility).
+
+## Wave 3 — firestrip candidates (in `lists/wave3.txt`)
+
+| Package | What it does | Disable effect | Verdict | Tested on |
+|---------|--------------|----------------|---------|-----------|
+| com.amazon.connectivitydiag | Network diagnostics | None seen | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.hedwig | Amazon News | No News app | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.recess | Casual games hub | No games | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.cloud9 | Silk browser | No browser | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.naatyam | India content stub | None | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.adep | Analytics/data event pipeline | protected (cannot disable) | protected | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.tv.csapp | Customer-service data collection | protected (cannot disable) | protected | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.device.logmanager | Log manager | protected (cannot disable) | protected | AFTKAUK002 / 7.7.1.7 |
+
+Tip: `adb exec-out screencap -p` on this build prepends a log line ("Init wrapper sys mutex…") — strip everything before the PNG header to get a valid image.
