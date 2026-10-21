@@ -1,0 +1,23 @@
+# Wave 2 — unused features + tuner/HbbTV (no tuner in use). See research/packages.md.
+# Kept on purpose: AirPlay, Matter, screensaver, Alexa.
+com.amazon.tv.ftvambient
+com.amazon.bueller.photos
+com.amazon.bueller.music
+com.amazon.gamehub
+com.amazon.minitv.android.app
+com.amazon.tahoe
+com.amazon.tv.easyupgrade
+com.amazon.tv.democontent.provider
+com.amazon.storm.lightning.tutorial
+com.amazon.tmm.tutorial
+com.amazon.tv.releasenotes
+com.amazon.rtcsessioncontroller
+com.android.printspooler
+com.android.bips
+com.amazon.tv.channelscan
+com.amazon.tv.channelscan.annakt.overlay
+com.vewd.core.fvpplayer
+com.vewd.core.fvpsign
+com.vewd.core.service
+com.vewd.core.tis
+com.vewd.core.tvapp
