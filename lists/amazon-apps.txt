@@ -1,0 +1,20 @@
+# Amazon apps and features most people never use: ambient mode, Photos, Music,
+# games, Kids, News, Silk browser, tutorials, upsell prompts, printing.
+# Details: research/packages.md
+com.amazon.tv.ftvambient
+com.amazon.bueller.photos
+com.amazon.bueller.music
+com.amazon.gamehub
+com.amazon.recess
+com.amazon.minitv.android.app
+com.amazon.naatyam
+com.amazon.tahoe
+com.amazon.hedwig
+com.amazon.cloud9
+com.amazon.tv.easyupgrade
+com.amazon.tv.democontent.provider
+com.amazon.storm.lightning.tutorial
+com.amazon.tmm.tutorial
+com.amazon.tv.releasenotes
+com.android.printspooler
+com.android.bips

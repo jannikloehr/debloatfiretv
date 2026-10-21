@@ -1,0 +1,10 @@
+# Fire TV smart TVs only (Fire TV 2-/4-Series, Omni, partner TVs) and only if
+# no antenna/cable/satellite tuner is used: channel scan + HbbTV (red button).
+# Not present on sticks/cubes. Details: research/packages.md
+com.amazon.tv.channelscan
+com.amazon.tv.channelscan.annakt.overlay
+com.vewd.core.fvpplayer
+com.vewd.core.fvpsign
+com.vewd.core.service
+com.vewd.core.tis
+com.vewd.core.tvapp

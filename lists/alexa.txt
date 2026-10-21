@@ -1,8 +1,11 @@
-# Alexa front end: voice UI, alarms, banners, skills, media control.
-# Backend (alexadirectivebrokerservice, alexa.datastore.app, davcservice) kept because Matter relies on it.
+# Alexa front end: voice UI, alarms, banners, skills, media control, calling.
+# The voice button on the remote stops working.
+# Backend (alexadirectivebrokerservice, alexa.datastore.app, davcservice) is kept
+# because Matter relies on it. Details: research/packages.md
 com.amazon.vizzini
 com.amazon.tv.alexaalerts
 com.amazon.tv.alexanotifications
 com.amazon.firetv.androidskillconnectioncapability
 com.amazon.alexa.externalmediaplayer.fireos
 com.amazon.alexamediaplayer.runtime.ftv
+com.amazon.rtcsessioncontroller

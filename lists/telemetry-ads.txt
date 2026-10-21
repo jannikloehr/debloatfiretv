@@ -1,7 +1,5 @@
-# Packages to disable, one per line. Lines starting with # are ignored.
-# Only add a package after documenting it in research/packages.md.
-
-# Wave 1 — telemetry & ads (see research/packages.md)
+# Telemetry, tracking and home-screen ads. Recommended for every Fire TV.
+# Details: research/packages.md
 com.amazon.tv.acr
 com.amazon.tv.fw.metrics
 com.amazon.wirelessmetrics.service
@@ -9,6 +7,7 @@ com.amazon.perfcollection
 com.amazon.dp.logger
 com.amazon.logan
 com.amazon.neo.minerva.logcat
+com.amazon.connectivitydiag
 com.amazon.hybridadidservice
 com.amazon.kso.blackbird
 com.amazon.sneakpeek

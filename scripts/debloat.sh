@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
-# Disable packages from a list for user 0. Dry run unless -y is given.
+# Disable packages from one or more lists for user 0. Dry run unless -y is given.
 set -euo pipefail
 
-list=${1:?usage: debloat.sh <list> [-y]}
-apply=${2:-}
+apply=
+[[ ${1:-} == -y ]] && { apply=1; shift; }
+(( $# )) || { echo "usage: debloat.sh [-y] <list>..." >&2; exit 1; }
 
-{ grep -vE '^\s*(#|$)' "$list" || true; } | while read -r pkg; do
-  if [[ $apply == -y ]]; then
+{ grep -hvE '^\s*(#|$)' "$@" || true; } | while read -r pkg; do
+  if [[ $apply ]]; then
     printf '%s: ' "$pkg"
-    adb shell pm disable-user --user 0 "$pkg" </dev/null 2>&1 | tr -d '\r' | head -1 || true
+    adb shell pm disable-user --user 0 "$pkg" </dev/null 2>&1 | tr -d '\r' | grep -m1 -iE 'new state|exception: ' | sed 's/^java.lang.//' || true
   else
     echo "would disable: $pkg"
   fi
 done
 
-[[ $apply == -y ]] || echo "(dry run — pass -y to apply)"
+[[ $apply ]] || echo "(dry run — pass -y to apply)"
