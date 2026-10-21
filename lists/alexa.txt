@@ -1,0 +1,8 @@
+# Alexa front end: voice UI, alarms, banners, skills, media control.
+# Backend (alexadirectivebrokerservice, alexa.datastore.app, davcservice) kept because Matter relies on it.
+com.amazon.vizzini
+com.amazon.tv.alexaalerts
+com.amazon.tv.alexanotifications
+com.amazon.firetv.androidskillconnectioncapability
+com.amazon.alexa.externalmediaplayer.fireos
+com.amazon.alexamediaplayer.runtime.ftv

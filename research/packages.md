@@ -50,6 +50,18 @@ Reference device: `AFTKAUK002` (`anna`, Fire TV smart TV, MediaTek), Fire OS 7.7
 | com.amazon.tv.matter / com.amazon.tv.mattercohost | Matter smart-home controller | Matter devices not controllable via TV. Kept: in use | keep | |
 | com.android.printspooler / com.android.bips | Printing | None on a TV | safe | AFTKAUK002 / 7.7.1.7 |
 
+## Alexa front end (in `lists/alexa.txt`)
+
+Matter (`com.amazon.tv.matter*`) holds Alexa permissions (`SEND_DATA_TO_ALEXA`, `CREATE_ALEXA_NOTIFICATIONS`), so the Alexa backend (`com.amazon.alexadirectivebrokerservice`, `com.amazon.alexa.datastore.app`, `amazon.speech.davs.davcservice`) stays enabled.
+
+| Package | What it does | Disable effect | Verdict | Tested on |
+|---------|--------------|----------------|---------|-----------|
+| com.amazon.vizzini | Alexa voice UI on the TV | Mic button on the remote does nothing | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.tv.alexaalerts | Alexa alarms/timers on TV | No alarms on TV | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.tv.alexanotifications | Alexa notification banners | No Alexa banners | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.firetv.androidskillconnectioncapability | Alexa skills controlling apps | "Alexa, play X in app Y" stops working | safe | AFTKAUK002 / 7.7.1.7 |
+| com.amazon.alexa.externalmediaplayer.fireos / com.amazon.alexamediaplayer.runtime.ftv | Alexa music/media playback on TV | No Alexa music on TV | safe | AFTKAUK002 / 7.7.1.7 |
+
 ## Keep — essential or likely to break things
 
 | Package | Why |
@@ -62,5 +74,5 @@ Reference device: `AFTKAUK002` (`anna`, Fire TV smart TV, MediaTek), Fire OS 7.7
 | com.amazon.device.software.ota*, com.amazon.tv.forcedotaupdater.v2 | System updates. Disabling blocks security fixes (`caution`, not in lists) |
 | com.amazon.webview.chromium | WebView used by many apps |
 | com.apple.airplay.amazon.airplay, com.amazon.cast.sink | AirPlay / casting, if used |
-| com.amazon.vizzini, com.amazon.alexa* | Alexa voice remote. Only disable if voice is never used |
+| com.amazon.alexadirectivebrokerservice, com.amazon.alexa.datastore.app, amazon.speech.davs.davcservice | Alexa backend, used by Matter |
 | ar.tvplayer.tv (TiviMate), com.netflix.ninja, com.amazon.firetv.youtube | User apps in daily use. Never touch |
